@@ -93,6 +93,14 @@ Download a detailed medical analysis report.
 ![PDF Report](assets/report.png)
 
 ---
+
+## Architecture
+
+![Architecture](assets/architecture.png)
+
+---
+
+
 ## 🛠 Tech Stack
 
 ### AI / ML

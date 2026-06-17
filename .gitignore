@@ -10,6 +10,7 @@ datasets/
 backend/uploads/
 
 # Reports
+reports/
 *.pdf
 
 # Jupyter
