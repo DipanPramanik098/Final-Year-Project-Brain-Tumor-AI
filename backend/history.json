@@ -118,5 +118,11 @@
         "prediction": "meningioma",
         "confidence": 87.05,
         "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:36",
+        "prediction": "glioma",
+        "confidence": 96.16,
+        "risk": "High"
     }
 ]

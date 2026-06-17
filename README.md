@@ -61,6 +61,38 @@ Download a detailed medical analysis report.
 
 ---
 
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](assets/home.png)
+
+---
+
+### 🔍 MRI Prediction
+
+![Prediction](assets/prediction.png)
+
+---
+
+### 🧠 Grad-CAM Visualization
+
+![GradCAM](assets/gradcam.png)
+
+---
+
+### 📊 Analytics Dashboard
+
+![Analytics](assets/analytics.png)
+
+---
+
+### 📄 PDF Report
+
+![PDF Report](assets/report.png)
+
+---
 ## 🛠 Tech Stack
 
 ### AI / ML
