@@ -1,0 +1,291 @@
+
+from reportlab.platypus import (
+    SimpleDocTemplate,
+    Paragraph,
+    Spacer,
+    Image,
+    PageBreak
+)
+
+from reportlab.lib.styles import (
+    getSampleStyleSheet
+)
+
+from reportlab.lib import colors
+
+from datetime import datetime
+
+
+def generate_report(
+    prediction,
+    confidence,
+    tumor_area,
+    risk_level,
+    recommendation,
+    heatmap_path,
+    report_path="report.pdf"
+):
+
+    doc = SimpleDocTemplate(
+        report_path
+    )
+
+    styles = getSampleStyleSheet()
+
+    content = []
+
+    # ===================================
+    # Header
+    # ===================================
+
+    title = Paragraph(
+        "BRAIN TUMOR MRI ANALYSIS REPORT",
+        styles["Title"]
+    )
+
+    content.append(title)
+
+    content.append(
+        Spacer(1, 20)
+    )
+
+    current_time = datetime.now().strftime(
+        "%d-%m-%Y %H:%M:%S"
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Generated On:</b> {current_time}",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 20)
+    )
+
+    # ===================================
+    # Prediction Summary
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Prediction Summary",
+            styles["Heading1"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 10)
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Tumor Type:</b> {prediction}",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Confidence:</b> {confidence}%",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 20)
+    )
+
+    # ===================================
+    # Risk Assessment
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Risk Assessment",
+            styles["Heading1"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 10)
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Estimated Tumor Area:</b> {tumor_area}%",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Risk Level:</b> {risk_level}",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            f"<b>Recommendation:</b> {recommendation}",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 20)
+    )
+
+    # ===================================
+    # Model Information
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Model Information",
+            styles["Heading1"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 10)
+    )
+
+    content.append(
+        Paragraph(
+            "<b>Architecture:</b> EfficientNetB0",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            "<b>Classes:</b> Glioma, Meningioma, No Tumor, Pituitary",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            "<b>Input Size:</b> 224 x 224",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Paragraph(
+            "<b>Test Accuracy:</b> 83.5%",
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 25)
+    )
+
+    # ===================================
+    # Grad-CAM Visualization
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Grad-CAM Visualization",
+            styles["Heading1"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 10)
+    )
+
+    try:
+
+        heatmap = Image(
+            heatmap_path,
+            width=350,
+            height=350
+        )
+
+        content.append(
+            heatmap
+        )
+
+    except Exception:
+
+        content.append(
+            Paragraph(
+                "Heatmap image not available.",
+                styles["BodyText"]
+            )
+        )
+
+    content.append(
+        Spacer(1, 25)
+    )
+
+    # ===================================
+    # Disclaimer
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Disclaimer",
+            styles["Heading1"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 10)
+    )
+
+    disclaimer = """
+    This report is generated using an Artificial Intelligence model.
+    The prediction is intended for educational and research purposes only.
+
+    It should NOT be considered a medical diagnosis.
+
+    Always consult a qualified radiologist or healthcare professional
+    before making any medical decisions.
+    """
+
+    content.append(
+        Paragraph(
+            disclaimer,
+            styles["BodyText"]
+        )
+    )
+
+    content.append(
+        Spacer(1, 20)
+    )
+
+    # ===================================
+    # Footer
+    # ===================================
+
+    content.append(
+        Paragraph(
+            "Generated by Brain Tumor AI Diagnostic System",
+            styles["Italic"]
+        )
+    )
+
+    doc.build(content)
+
+    return report_path
+
+
+if __name__ == "__main__":
+
+    generate_report(
+        prediction="glioma",
+        confidence=95.4,
+        tumor_area=12.8,
+        risk_level="Medium",
+        recommendation="Consult Neurologist",
+        heatmap_path="gradcam_overlay.jpg"
+    )
+
+    print("Professional PDF Generated Successfully")
+

@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Dataset
+datasets/
+
+# Uploads
+backend/uploads/
+
+# Reports
+*.pdf
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+frontend/node_modules/
+
+# Build
+frontend/dist/
+
+# Environment
+.env
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

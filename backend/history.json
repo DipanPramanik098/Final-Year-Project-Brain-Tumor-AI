@@ -1,0 +1,122 @@
+[
+    {
+        "date": "17-06-2026 21:07",
+        "prediction": "pituitary",
+        "confidence": 99.57,
+        "risk": "Low"
+    },
+    {
+        "date": "17-06-2026 21:08",
+        "prediction": "meningioma",
+        "confidence": 92.06,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 21:15",
+        "prediction": "pituitary",
+        "confidence": 98.21,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 21:18",
+        "prediction": "meningioma",
+        "confidence": 64.14,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 21:21",
+        "prediction": "glioma",
+        "confidence": 96.16,
+        "risk": "High"
+    },
+    {
+        "date": "17-06-2026 21:24",
+        "prediction": "glioma",
+        "confidence": 96.62,
+        "risk": "Low"
+    },
+    {
+        "date": "17-06-2026 21:55",
+        "prediction": "notumor",
+        "confidence": 99.77,
+        "risk": "High"
+    },
+    {
+        "date": "17-06-2026 21:59",
+        "prediction": "notumor",
+        "confidence": 99.77,
+        "risk": "High"
+    },
+    {
+        "date": "17-06-2026 22:05",
+        "prediction": "notumor",
+        "confidence": 99.77,
+        "risk": "Low"
+    },
+    {
+        "date": "17-06-2026 22:05",
+        "prediction": "meningioma",
+        "confidence": 64.14,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:10",
+        "prediction": "pituitary",
+        "confidence": 98.21,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:10",
+        "prediction": "meningioma",
+        "confidence": 55.14,
+        "risk": "High"
+    },
+    {
+        "date": "17-06-2026 22:12",
+        "prediction": "pituitary",
+        "confidence": 65.78,
+        "risk": "Low"
+    },
+    {
+        "date": "17-06-2026 22:12",
+        "prediction": "meningioma",
+        "confidence": 87.05,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:13",
+        "prediction": "meningioma",
+        "confidence": 80.1,
+        "risk": "High"
+    },
+    {
+        "date": "17-06-2026 22:13",
+        "prediction": "pituitary",
+        "confidence": 98.21,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:13",
+        "prediction": "pituitary",
+        "confidence": 98.21,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:14",
+        "prediction": "pituitary",
+        "confidence": 98.21,
+        "risk": "Medium"
+    },
+    {
+        "date": "17-06-2026 22:14",
+        "prediction": "pituitary",
+        "confidence": 65.78,
+        "risk": "Low"
+    },
+    {
+        "date": "17-06-2026 22:14",
+        "prediction": "meningioma",
+        "confidence": 87.05,
+        "risk": "Medium"
+    }
+]
